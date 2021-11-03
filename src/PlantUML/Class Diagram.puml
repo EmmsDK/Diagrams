@@ -1,0 +1,44 @@
+@startuml
+class Main{}
+
+class Player{
+    - Scanner playerInput;
+    - String playerName;
+}
+
+class Team{
+    - String teamName;
+    - Scanner teamInput;
+    - int teamID;
+    - int teamPoints;
+    - Boolean haveLost = false;
+    - int gamesWon = 0;
+    + int setGamesWon(int won)
+    + Boolean setHaveLost(Boolean lost)
+    + int setTeamPoints(int teamPoints)
+}
+
+class Admin{
+    - Scanner writeToFile;
+    - Scanner readFromFile;
+
+}
+
+class Date{
+    - int day;
+    - int month;
+    - int year;
+    - String deadline = "day/month/year";
+}
+
+class Knockout{
+    - ArrayList<Team> teams;
+}
+
+class Brackets{
+    - ArrayList<ArrayList> bracket = new ArrayList<>();
+    - ArrayList<Team> teamPlacement = new ArrayList<>()
+}
+
+
+@enduml
